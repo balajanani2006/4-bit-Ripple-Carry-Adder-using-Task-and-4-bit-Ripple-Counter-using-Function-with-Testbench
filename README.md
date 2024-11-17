@@ -122,7 +122,7 @@ end
 initial begin $monitor("Time = %0t | Reset = %b | Q = %b", $time, reset, Q); end
 
 endmodule
-```
+
 
 ![image](https://github.com/user-attachments/assets/bc9790e6-13b7-4428-a5a1-954432b9d1ca)
 
