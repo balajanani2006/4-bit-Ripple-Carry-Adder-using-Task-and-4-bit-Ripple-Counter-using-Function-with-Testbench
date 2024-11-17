@@ -72,7 +72,7 @@ initial begin
     $monitor("Time = %0t | A = %b | B = %b | Cin = %b | Sum = %b | Cout = %b",
              $time, A, B, Cin, Sum, Cout);
 end
-
+```
 output
 
 
@@ -80,6 +80,7 @@ output
 
 
 Verilog code for 4-bit Ripple counter
+```
 module ripple_counter_4bit ( input clk, // Clock signal input reset, // Reset signal output reg [3:0] Q // 4-bit output for the counter value );
 
 // Function to calculate next state function [3:0] next_state;
@@ -100,7 +101,7 @@ endmodule
 
 Testbench code for 4-bit Ripple counter
 
-
+```
 
 module ripple_counter_4bit_tb;
 
@@ -121,11 +122,7 @@ end
 initial begin $monitor("Time = %0t | Reset = %b | Q = %b", $time, reset, Q); end
 
 endmodule
-
-
-
-
-
+```
 
 ![image](https://github.com/user-attachments/assets/bc9790e6-13b7-4428-a5a1-954432b9d1ca)
 
