@@ -12,6 +12,8 @@ Verilog code for 4-bit Ripple carry adder
 
 module ripple_adders ( input [3:0] A, input [3:0] B, input Cin, output [3:0] Sum, output Cout );
 
+
+
 reg [3:0] sum_temp;
 reg cout_temp;
 reg cout_final;
@@ -38,6 +40,9 @@ re
 endmodule
 
 Testbench code for 4-bit Ripple carry adder
+
+
+
 module ripple_adder_tb;
 
 reg [3:0] A, B;
@@ -85,6 +90,9 @@ module ripple_counter_4bit ( input clk, // Clock signal input reset, // Reset si
 endmodule
 
 Testbench code for 4-bit Ripple counter
+
+
+
 module ripple_counter_4bit_tb;
 
 reg clk; reg reset; wire [3:0] Q;
