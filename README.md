@@ -7,7 +7,9 @@ Apparatus Required:
 Computer with Vivado or any Verilog simulation software.
 Verilog HDL compiler.
 
-// Verilog Code
+
+Verilog code for 4-bit Ripple carry adder
+
 module ripple_adders ( input [3:0] A, input [3:0] B, input Cin, output [3:0] Sum, output Cout );
 
 reg [3:0] sum_temp;
@@ -32,13 +34,10 @@ end
 
 assign Sum = sum_temp;
 assign Cout = cout_final;
+re
 endmodule
 
-
-
-
-// Test bench for Ripple carry adder
-
+Testbench code for 4-bit Ripple carry adder
 module ripple_adder_tb;
 
 reg [3:0] A, B;
@@ -70,39 +69,20 @@ initial begin
              $time, A, B, Cin, Sum, Cout);
 end
 
-
-endmodule
-
-
-// Verilog Code ripple counter
-
-module ripple_counter_4bit (
-    input clk,           // Clock signal
-    input reset,         // Reset signal
-    output reg [3:0] Q   // 4-bit output for the counter value
-);
-
-    // Function to calculate next state
-    function [3:0] next_state;
-        input [3:0] curr_state;
-        begin
-            next_state = curr_state + 1;
-        end
-    endfunction
-
-    // Sequential logic for counter
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            Q <= 4'b0000;       // Reset the counter to 0
-        else
-            Q <= next_state(Q); // Increment the counter
-    end
-
-endmodule
 output
-![image](https://github.com/user-attachments/assets/3f87e6c1-f521-4833-82c3-2958af1dbcc8)
 
-test bench
+![image](https://github.com/user-attachments/assets/e4680eba-87ea-4ca1-a732-b052c60af3a7)
+
+Verilog code for 4-bit Ripple counter
+module ripple_counter_4bit ( input clk, // Clock signal input reset, // Reset signal output reg [3:0] Q // 4-bit output for the counter value );
+
+// Function to calculate next state function [3:0] next_state; input [3:0] curr_state; begin next_state = curr_state + 1; end endfunction
+
+// Sequential logic for counter always @(posedge clk or posedge reset) begin if (reset) Q <= 4'b0000; // Reset the counter to 0 else Q <= next_state(Q); // Increment the counter end
+
+endmodule
+
+Testbench code for 4-bit Ripple counter
 module ripple_counter_4bit_tb;
 
 reg clk; reg reset; wire [3:0] Q;
@@ -119,11 +99,18 @@ initial begin // Initialize inputs clk = 0; reset = 1;
 // Run simulation for 200ns
 #200 $stop;
 end
-
 initial begin $monitor("Time = %0t | Reset = %b | Q = %b", $time, reset, Q); end
 
 endmodule
-![image](https://github.com/user-attachments/assets/be9b53e6-e4a8-42c7-be04-f0eaac5feb93)
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/aef386b5-7d50-4bed-9a6b-ca935da4650a)
+
+
+
 
 
 Conclusion:
