@@ -71,7 +71,9 @@ end
 
 output
 
-![image](https://github.com/user-attachments/assets/e4680eba-87ea-4ca1-a732-b052c60af3a7)
+
+![image](https://github.com/user-attachments/assets/78d02dbf-71ea-4d51-8c8c-d6306cbcbd50)
+
 
 Verilog code for 4-bit Ripple counter
 module ripple_counter_4bit ( input clk, // Clock signal input reset, // Reset signal output reg [3:0] Q // 4-bit output for the counter value );
@@ -107,7 +109,9 @@ endmodule
 
 
 
-![image](https://github.com/user-attachments/assets/aef386b5-7d50-4bed-9a6b-ca935da4650a)
+
+![image](https://github.com/user-attachments/assets/bc9790e6-13b7-4428-a5a1-954432b9d1ca)
+
 
 
 
