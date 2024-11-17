@@ -10,7 +10,7 @@ Verilog HDL compiler.
 
 Verilog code for 4-bit Ripple carry adder
 
- module ripple_adders ( input [3:0] A, input [3:0] B, input Cin, output [3:0] Sum, output Cout );
+module ripple_adders ( input [3:0] A, input [3:0] B, input Cin, output [3:0] Sum, output Cout );
 
 reg [3:0] sum_temp;
 reg cout_temp;
@@ -82,9 +82,19 @@ output
 Verilog code for 4-bit Ripple counter
 module ripple_counter_4bit ( input clk, // Clock signal input reset, // Reset signal output reg [3:0] Q // 4-bit output for the counter value );
 
-// Function to calculate next state function [3:0] next_state; input [3:0] curr_state; begin next_state = curr_state + 1; end endfunction
+// Function to calculate next state function [3:0] next_state;
+input [3:0] curr_state; 
+begin next_state = curr_state + 1;
+end 
 
-// Sequential logic for counter always @(posedge clk or posedge reset) begin if (reset) Q <= 4'b0000; // Reset the counter to 0 else Q <= next_state(Q); // Increment the counter end
+
+// Sequential logic for counter
+always @(posedge clk or posedge reset) 
+begin if (reset) Q <= 4'b0000; 
+// Reset the counter to 0 
+      else Q <= next_state(Q);
+// Increment the counter 
+end
 
 endmodule
 
